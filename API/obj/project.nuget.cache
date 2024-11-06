@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "sw1xlkTzzRyjIeUkNK8liAKAT0webBKhQQMz2Sdc2cvIk4KDJyhjNnVUvqqx78XuewPua0Q1qVShW7JXZSXsRg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\API\\API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\markmb\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\markmb\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\markmb\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\markmb\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\markmb\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\markmb\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
