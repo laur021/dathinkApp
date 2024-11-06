@@ -4,7 +4,8 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecastController : ControllerBase
+
+public class WeatherForecastController : ControllerBase //WeatherForecast is actually the name of the endpoint
 {
     private static readonly string[] Summaries = new[]
     {
@@ -17,6 +18,10 @@ public class WeatherForecastController : ControllerBase
     {
         _logger = logger;
     }
+
+//TAKE NOTE:
+//[HttpGet(Name = "GetWeatherForecast")] - http://localhost:5021/WeatherForecast - //by default ang name ng endpoint is "ControllerName". 
+//[HttpGet("GetWeatherForecast")] http://localhost:5021/WeatherForecast/GetWeatherForecast - //Kapag inindicate sa GET/POST method ung endpoint. yun ang magiging URL under parin ng ControllerName.
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
