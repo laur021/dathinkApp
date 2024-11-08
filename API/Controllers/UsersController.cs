@@ -6,16 +6,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-[ApiController]
-[Route("api/[controller]")] //api/users
-public class UsersController(DataContext dataContext) : ControllerBase
+public class UsersController(DataContext dataContext) : BaseApiController
 {
-    private readonly DataContext _dataContext = dataContext;
+    // private readonly DataContext _dataContext = dataContext;
 
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsersAsync()
     {
-        var users = await _dataContext.Users.ToListAsync();
+        var users = await dataContext.Users.ToListAsync();
 
         if (!users.Any()) return NotFound("Not found.");
 
@@ -24,7 +22,7 @@ public class UsersController(DataContext dataContext) : ControllerBase
     [HttpGet("{id:int}")] //api/users/3
     public async Task<ActionResult<AppUser>> GetUserAsync(int id)
     {
-        var user = await _dataContext.Users.FindAsync(id); //use find instead of FirstOrDefault
+        var user = await dataContext.Users.FindAsync(id); //use find instead of FirstOrDefault
 
         if (user is null) return NotFound("Not found."); 
 
