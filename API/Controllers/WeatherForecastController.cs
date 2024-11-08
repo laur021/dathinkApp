@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-
-public class WeatherForecastController : ControllerBase //WeatherForecast is actually the name of the endpoint
+public class WeatherForecastController : BaseApiController
 {
     private static readonly string[] Summaries = new[]
     {
