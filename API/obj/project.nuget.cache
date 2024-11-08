@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uZn4P3TG4TonMIztU9f3aIV2UqK4z7f+9jmtqtZHC6QK8fd6JWyk7KUNKA4VkJayDISSS9lvLGwH8ukl4CLWnw==",
+  "dgSpecHash": "pS8FTybLz36c+8AmSe059gKYfE1/Zd9+xWqsDikROylcbtFYHtLETc6dLegg2eSEXxWke2umCqYneSClWqPWUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\api\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\markmb\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\markmb\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

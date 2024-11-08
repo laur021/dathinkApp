@@ -8,7 +8,14 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<DataContext>(option => {
     option.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddCors();
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+app.UseCors(x => x.AllowAnyHeader()
+                .AllowAnyMethod()
+                .WithOrigins("http://localhost:4200", "https://localhost:4200"));
+                
 app.MapControllers();
 app.Run();
 
@@ -16,7 +23,7 @@ app.Run();
 // builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
 // app.UseAuthorization();
-// Configure the HTTP request pipeline.
+
 // if (app.Environment.IsDevelopment())
 // {
 //     app.UseSwagger();

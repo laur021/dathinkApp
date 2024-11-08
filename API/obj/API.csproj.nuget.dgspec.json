@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\API\\API.csproj": {}
+    "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\API\\API.csproj": {
+    "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\API\\API.csproj",
+        "projectPath": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\api\\API.csproj",
         "packagesPath": "C:\\Users\\markmb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\API\\obj\\",
+        "outputPath": "C:\\Users\\markmb\\source\\repos\\0) Web Development bootcamp\\Angular Projects\\dathinkApp\\api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
