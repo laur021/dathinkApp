@@ -1,1 +1,8 @@
-<h1 class="text-danger">mark</h1>
+<h1 class="text-danger text-center">{{ title.toUpperCase() }}</h1>
+
+<!-- new way -->
+<ul>
+  @for(user of users; track user.id) {
+  <li>{{ user.id }} - {{ user.userName }}</li>
+  }
+</ul>
