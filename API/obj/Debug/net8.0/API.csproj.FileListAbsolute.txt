@@ -127,3 +127,6 @@ C:\Users\markmb\source\repos\0) Web Development bootcamp\Angular Projects\dathin
 C:\Users\markmb\source\repos\0) Web Development bootcamp\Angular Projects\dathinkApp\API\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\markmb\source\repos\0) Web Development bootcamp\Angular Projects\dathinkApp\API\obj\Debug\net8.0\API.csproj.AssemblyReference.cache
 C:\Users\markmb\source\repos\0) Web Development bootcamp\Angular Projects\dathinkApp\API\obj\Debug\net8.0\API.csproj.Up2Date
+C:\Users\Core i7 7th Gen\source\repos\00 Real Projects\dathinkApp\API\obj\Debug\net8.0\API.dll
+C:\Users\Core i7 7th Gen\source\repos\00 Real Projects\dathinkApp\API\obj\Debug\net8.0\refint\API.dll
+C:\Users\Core i7 7th Gen\source\repos\00 Real Projects\dathinkApp\API\obj\Debug\net8.0\API.pdb
