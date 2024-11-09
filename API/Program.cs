@@ -1,33 +1,43 @@
+using System.Text;
 using API.Data;
+using API.Interfaces;
+using API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container. test
-builder.Services.AddControllers();
-builder.Services.AddDbContext<DataContext>(option => {
-    option.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-builder.Services.AddCors();
+builder.Services.AddApplicationServices(builder.Configuration);
+
+builder.Services.AddIdentityServices(builder.Configuration);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseCors(x => x.AllowAnyHeader()
                 .AllowAnyMethod()
                 .WithOrigins("http://localhost:4200", "https://localhost:4200"));
-                
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-// builder.Services.AddEndpointsApiExplorer();
-// builder.Services.AddSwaggerGen();
-// app.UseAuthorization();
+// Explanation of Key Components
 
-// if (app.Environment.IsDevelopment())
-// {
-//     app.UseSwagger();
-//     app.UseSwaggerUI();
-// }
+// ApplicationServices: Connection, Services etc.
 
-// app.UseHttpsRedirection();
+// IdentityServices: Authentication
+
+// CORS Configuration: Allows HTTP requests from specific origins, enabling front-end applications (like Angular) hosted on localhost:4200 to communicate with the API.
+
+// Dependency Injection: Registers ITokenService with TokenService for generating JWT tokens.
+
+// JWT Authentication Setup: Configures JWT authentication with a secret key (retrieved from configuration) for token validation, allowing secure access to protected endpoints.
+
+// Middleware Setup: Configures CORS, authentication

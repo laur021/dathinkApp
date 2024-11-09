@@ -15,10 +15,6 @@ public class WeatherForecastController : BaseApiController
         _logger = logger;
     }
 
-//TAKE NOTE:
-//[HttpGet(Name = "GetWeatherForecast")] - http://localhost:5021/WeatherForecast - //by default ang name ng endpoint is "ControllerName". 
-//[HttpGet("GetWeatherForecast")] http://localhost:5021/WeatherForecast/GetWeatherForecast - //Kapag inindicate sa GET/POST method ung endpoint. yun ang magiging URL under parin ng ControllerName.
-
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
@@ -31,3 +27,7 @@ public class WeatherForecastController : BaseApiController
         .ToArray();
     }
 }
+
+//TAKE NOTE:
+//[HttpGet(Name = "GetWeatherForecast")] - http://localhost:5021/WeatherForecast - //by default ang name ng endpoint is "ControllerName". 
+//[HttpGet("GetWeatherForecast")] http://localhost:5021/WeatherForecast/GetWeatherForecast - //Kapag inindicate sa GET/POST method ung endpoint. yun ang magiging URL under parin ng ControllerName.
