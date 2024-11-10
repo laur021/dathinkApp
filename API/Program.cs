@@ -28,16 +28,19 @@ app.MapControllers();
 
 app.Run();
 
-// Explanation of Key Components
+/*
+Explanation of Key Components
 
-// ApplicationServices: Connection, Services etc.
+ApplicationServices: Configures services such as database connection and application-specific services.
 
-// IdentityServices: Authentication
+IdentityServices: Sets up authentication services, specifically using JWT for secure access.
 
-// CORS Configuration: Allows HTTP requests from specific origins, enabling front-end applications (like Angular) hosted on localhost:4200 to communicate with the API.
+CORS Configuration: Allows HTTP requests from specific origins, enabling front-end applications (like Angular) hosted on localhost:4200 to communicate with the API.
 
-// Dependency Injection: Registers ITokenService with TokenService for generating JWT tokens.
+Dependency Injection: Registers ITokenService with TokenService, allowing dependency injection for generating JWT tokens.
 
-// JWT Authentication Setup: Configures JWT authentication with a secret key (retrieved from configuration) for token validation, allowing secure access to protected endpoints.
+JWT Authentication Setup: Configures JWT authentication with a secret key (retrieved from configuration) for token validation, ensuring secure access to protected endpoints.
 
-// Middleware Setup: Configures CORS, authentication
+Middleware Setup: Configures essential middleware, including CORS and authentication.
+*/
+

@@ -25,3 +25,12 @@ public static class IdentityServiceExtensions
         return services;
     }
 }
+
+/*
+Summary of the added services:
+1. Authentication - Configures JWT Bearer authentication, specifying JwtBearerDefaults as the default scheme.
+2. Token Validation Parameters:
+   - Validates the signing key to ensure token authenticity.
+   - Configures the signing key using a symmetric security key derived from a secret token key in configuration.
+   - Disables issuer and audience validation, which may be configured depending on the security requirements.
+*/

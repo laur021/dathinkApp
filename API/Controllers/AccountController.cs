@@ -66,22 +66,24 @@ public class AccountController(DataContext dataContext, ITokenService tokenServi
     }
 }
 
-// Explanation:
-// AccountController: This controller manages user account registration and login.
+/*
+Explanation:
+AccountController: This controller manages user account registration and login.
 
-// Register Method:
-// Receives a RegisterDto with the user's chosen username and password.
-// Checks if the username already exists in the database.
-// Uses HMACSHA512 to hash the user's password and generates a password salt.
-// Creates a new AppUser instance with the username, hashed password, and salt.
-// Adds the user to the database and saves the changes.
+Register Method:
+- Receives a RegisterDto with the user's chosen username and password.
+- Checks if the username already exists in the database.
+- Uses HMACSHA512 to hash the user's password and generates a password salt.
+- Creates a new AppUser instance with the username, hashed password, and salt.
+- Adds the user to the database and saves the changes.
 
-// Login Method:
-// Receives a LoginDto containing the username and password.
-// Searches the database for a user with the provided username.
-// If no user is found, returns an Unauthorized response.
-// If found, uses the stored salt to hash the provided password and compares it byte-by-byte with the stored hash.
-// Returns an Unauthorized response if the hashes do not match; otherwise, returns the authenticated user.
+Login Method:
+- Receives a LoginDto containing the username and password.
+- Searches the database for a user with the provided username.
+- If no user is found, returns an Unauthorized response.
+- If found, uses the stored salt to hash the provided password and compares it byte-by-byte with the stored hash.
+- Returns an Unauthorized response if the hashes do not match; otherwise, returns the authenticated user.
 
-// UserExists Helper Method:
-// Checks the database to see if any user already has the specified username (case-insensitive).
+UserExists Helper Method:
+- Checks the database to see if any user already has the specified username (case-insensitive).
+*/

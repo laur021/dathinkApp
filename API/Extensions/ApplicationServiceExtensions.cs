@@ -22,3 +22,11 @@ public static class ApplicationServiceExtensions
         return services;
     }
 }
+
+/*
+Summary of the added services:
+1. Controllers - Registers controllers in the API to handle HTTP requests.
+2. DbContext - Configures the DbContext for the application's database interactions, here using SQLite.
+3. CORS - Enables CORS to allow or restrict cross-origin requests.
+4. Token Service - Adds the TokenService with a scoped lifetime, meaning a new instance will be provided per HTTP request, which is optimal for data access services.
+*/
