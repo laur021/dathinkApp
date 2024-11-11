@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  
+  // @Input() userFromHomeComponent: any; // OLD WAY: This property will hold the data from the parent
+  userFromHomeComponent = input.required<any>(); // NEW WAY: This property will hold the data from the parent
   model: any = {};
 
   register() {
