@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,15 +10,27 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegisterComponent {
   
-  // @Input() userFromHomeComponent: any; // OLD WAY: This property will hold the data from the parent
-  userFromHomeComponent = input.required<any>(); // NEW WAY: This property will hold the data from the parent
+  //PARENT TO CHILD
+  // OLD WAY: 
+  // @Input() userFromHomeComponent: any; 
+  // NEW WAY: 
+  userFromHomeComponent = input.required<any>(); 
+
+  
+  // CHILD TO PARENT
+  // OLD WAY:
+  // @Output() cancelRegister = new EventEmitter();
+  // NEW WAY:
+  cancelRegister = output<boolean>();
+
   model: any = {};
 
   register() {
     console.log(this.model);
   }
 
-  cancel() {
-    console.log('cancelled');
+  cancel(){
+    this.cancelRegister.emit(false);
   }
+
 }
