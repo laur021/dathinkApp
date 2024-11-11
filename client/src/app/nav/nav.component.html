@@ -8,23 +8,43 @@
       data-bs-target="#navbarCollapse"
       aria-controls="navbarCollapse"
       aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
+      aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link active">Matches</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active">Lists</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active">Messages</a>
-        </li>
-      </ul>
-      <!-- #loginForm="ngForm" -->
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarCollapse">
+
+    <!-- Show navbar -->
+    @if (loggedIn) {
+    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      <li class="nav-item">
+        <a class="nav-link active">Matches</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active">Lists</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active">Messages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+    }
+
+    <!-- show dropdown -->
+    @if (loggedIn) {
+      <div class="dropdown">
+        <a class="dropdown-toggle text-light">Welcome user</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item">Edit profile</a>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
+      </div>
+    }
+
+    <!-- show form -->
+    @if (!loggedIn) {
+      <div></div>
       <form
         #loginForm="ngForm"
         class="d-flex"
@@ -44,12 +64,9 @@
           placeholder="Password"
           type="password"
         />
-        <button class="btn btn-outline-success fs-base" type="submit">
-          Login
-        </button>
+        <button class="btn btn-outline-success fs-base" type="submit">Login</button>
       </form>
+    }      
     </div>
   </div>
 </nav>
-
-
