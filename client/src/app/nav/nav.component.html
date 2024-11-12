@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
-    <a class="navbar-brand fw-bolder" href="#">
+    <a class="navbar-brand fw-bolder" routerLink="/">
       DayThink
       <svg style="width: 20px; height: 20px; color: red; margin-left: 1pt" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
         <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
@@ -22,17 +22,23 @@
     @if (this.accountService.currentUser()) {
     <ul class="navbar-nav me-auto mb-2 mb-md-0">
       <li class="nav-item">
-        <a class="nav-link active">Matches</a>
+        <a 
+          routerLink="/members"
+          routerLinkActive="active"
+          class="nav-link">Matches</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active">Lists</a>
+        <a 
+          routerLink="/lists" 
+          routerLinkActive="active"
+          class="nav-link">Lists</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active">Messages</a>
+        <a 
+          routerLink="/messages" 
+          routerLinkActive="active"
+          class="nav-link">Messages</a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link active" (click)="logout()">Logout</a>
-      </li> -->
     </ul>
     }
 
