@@ -2,7 +2,7 @@ import { Component, inject } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { AccountService } from "../_services/account.service";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
-import { RouterLink, RouterLinkActive } from "@angular/router";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
   selector: "app-nav",
@@ -12,21 +12,20 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
   styleUrl: "./nav.component.css",
 })
 export class NavComponent {
-  // Inject AccountService
-  accountService = inject(AccountService);
+  
+  accountService = inject(AccountService); // Inject AccountService
+  private router = inject(Router); //inject the router for navigation route
   model: any = {};
 
-  // Define login as a standard method
   login() {
     this.accountService.login(this.model).subscribe({
-      next: (response: any) => {
-        console.log(response);
-      },
+      next: _ => this.router.navigateByUrl('/members'),
       error: (error: any) => console.log(error),
     });
   }
 
   logout() {
-    this.accountService.logout();
+    this.accountService.logout()
+    this.router.navigateByUrl('/')
   }
 }
