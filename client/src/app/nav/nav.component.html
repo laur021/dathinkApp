@@ -1,11 +1,11 @@
 <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-dark">
+  <nav class="navbar navbar-expand-lg bg-primary bg-gradient">
   <div class="container">
-    <a class="navbar-brand fw-bolder" routerLink="/">
+    <a class="navbar-brand fw-bolder text-white" routerLink="/">
       DayThink
       <svg
         [class.text-warning]="this.accountService.currentUser()" 
-        style="width: 20px; height: 20px; margin-left: 1pt; color: red"
+        style="width: 20px; height: 20px; margin-left: 1pt"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
@@ -34,26 +34,26 @@
         <a 
           routerLink="members"
           routerLinkActive="active"
-          class="nav-link">Matches</a>
+          class="nav-link text-light">Matches</a>
       </li>
       <li class="nav-item">
         <a 
           routerLink="lists" 
           routerLinkActive="active"
-          class="nav-link">Lists</a>
+          class="nav-link text-light">Lists</a>
       </li>
       <li class="nav-item">
         <a 
           routerLink="messages" 
           routerLinkActive="active"
-          class="nav-link">Messages</a>
+          class="nav-link text-light">Messages</a>
       </li>
     }
       <li class="nav-item">
         <a 
           routerLink="learn-more" 
           routerLinkActive="active"
-          class="nav-link">Learn more</a>
+          class="nav-link text-light">Learn more</a>
       </li>
     </ul>
   
