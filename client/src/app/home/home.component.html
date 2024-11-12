@@ -1,26 +1,26 @@
 <div class="container mt-5">
     <div class="text-center">
 
-        @if (!registerMode) {
-            <h1>
-                Find your match
-                <svg style="width: 32px; height: 32px; color: red;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
+        @if (this.accountService.currentUser()) {
+            <button class="btn btn-primary bg-gradient me-2">
+                <h2>Find now</h2>  
+                <svg [class.text-warning]="this.accountService.currentUser()" style="width: 50px; height: 50px; color: red" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-heart-fill" viewBox="0 0 16 16">
                     <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
                 </svg>
-            </h1>
-            <p class="lead">Come on in to view your matches... all you need to do is signup</p>
-            <div class="text-center">
+            </button>
+            <p class="lead pt-4">Come on in to view your matches...</p>
+            <!-- <div class="text-center">
                 <button (click)="registerToggle()" class="btn btn-primary me-2">Register</button>
-                <button class="btn btn-info me-2">Learn more</button>
-            </div>
+                <button class="btn btn-info me-2" routerLink="learn-more">Learn more</button>
+            </div> -->
         } @else {
             <div class="container">
                 <div class="row justify-content-center">
+                    <div class="col-12">
+                        <p class="lead">Come on in to view your matches... all you need to do is signup</p>
+                    </div>
                     <div class="col-4">
-                        <app-register
-                            (cancelRegister)="cancelRegisterMode($event)"
-                        >
-                        </app-register>
+                        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
                     </div>
                 </div>
             </div>

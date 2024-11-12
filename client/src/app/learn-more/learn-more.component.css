@@ -1,0 +1,7 @@
+/* Custom class to apply rounded-pill from medium screen size and up */
+@media (min-width: 768px) {
+    .rounded-pill-md-up {
+      border-radius: 50rem 0 0 50rem !important;
+    }
+  }
+  

@@ -18,9 +18,9 @@ export class AccountService {
 
   login(model: any) {
     return this.http.post<User>(this.baseUrl + 'account/login', model).pipe(
-      map(user => {
+      map(user => { //user variable get the response(user details) from API
         if(user){
-          localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('user', JSON.stringify(user)); //goes to localstorage as keyvalue pair
           this.currentUser.set(user);
         }
       })

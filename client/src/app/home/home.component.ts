@@ -1,20 +1,22 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RegisterComponent } from "../register/register.component";
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
+import { AccountService } from '../_services/account.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RegisterComponent],
+  imports: [RegisterComponent, RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
 
   http = inject(HttpClient);
+  accountService = inject(AccountService);
   registerMode = false;
   users: any;
-
 
   ngOnInit(): void {
     this.getUsers();
