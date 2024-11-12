@@ -7,7 +7,7 @@ import { AccountService } from '../_services/account.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RegisterComponent, RouterLink],
+  imports: [RegisterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
