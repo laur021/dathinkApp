@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
   registerMode = false;
   users: any;
 
-
   ngOnInit(): void {
     this.getUsers();
   }
