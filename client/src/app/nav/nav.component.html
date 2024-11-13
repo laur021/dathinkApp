@@ -1,19 +1,22 @@
 <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"> -->
-  <nav class="navbar navbar-expand-lg bg-primary bg-gradient">
+<nav class="navbar navbar-expand-lg bg-primary bg-gradient">
   <div class="container">
     <a class="navbar-brand fw-bolder text-white" routerLink="/">
       DaThinkUp
       <svg
-        [class.text-warning]="this.accountService.currentUser()" 
+        [class.text-warning]="this.accountService.currentUser()"
         style="width: 20px; height: 20px; margin-left: 1pt"
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
         fill="currentColor"
         class="bi bi-chat-left-heart-fill"
-        viewBox="0 0 16 16">
-        <path d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"/>
-    </svg>
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132"
+        />
+      </svg>
     </a>
     <button
       class="navbar-toggler"
@@ -22,48 +25,68 @@
       data-bs-target="#navbarCollapse"
       aria-controls="navbarCollapse"
       aria-expanded="false"
-      aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarCollapse">
+    <div
+      class="collapse navbar-collapse d-flex justify-content-between"
+      id="navbarCollapse"
+    >
+      <!-- Show navbar -->
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        @if (this.accountService.currentUser()) {
+        <li class="nav-item">
+          <a
+            routerLink="members"
+            routerLinkActive="active"
+            class="nav-link text-light"
+            >Matches</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="lists"
+            routerLinkActive="active"
+            class="nav-link text-light"
+            >Lists</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="messages"
+            routerLinkActive="active"
+            class="nav-link text-light"
+            >Messages</a
+          >
+        </li>
+        }
+        <li class="nav-item">
+          <a
+            routerLink="learn-more"
+            routerLinkActive="active"
+            class="nav-link text-light"
+            >Learn more</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            routerLink="errors"
+            routerLinkActive="active"
+            class="nav-link text-light"
+            >errors</a
+          >
+        </li>
+      </ul>
 
-    <!-- Show navbar -->
-    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-    @if (this.accountService.currentUser()) {
-      <li class="nav-item">
-        <a 
-          routerLink="members"
-          routerLinkActive="active"
-          class="nav-link text-light">Matches</a>
-      </li>
-      <li class="nav-item">
-        <a 
-          routerLink="lists" 
-          routerLinkActive="active"
-          class="nav-link text-light">Lists</a>
-      </li>
-      <li class="nav-item">
-        <a 
-          routerLink="messages" 
-          routerLinkActive="active"
-          class="nav-link text-light">Messages</a>
-      </li>
-    }
-      <li class="nav-item">
-        <a 
-          routerLink="learn-more" 
-          routerLinkActive="active"
-          class="nav-link text-light">Learn more</a>
-      </li>
-    </ul>
-  
-    
-
-    <!-- show dropdown -->
-    @if (this.accountService.currentUser()) {
+      <!-- show dropdown -->
+      @if (this.accountService.currentUser()) {
       <div dropdown class="dropdown">
-        <a dropdownToggle class="dropdown-toggle text-light text-decoration-none">
-          Welcome {{accountService.currentUser()?.username | titlecase}}
+        <a
+          dropdownToggle
+          class="dropdown-toggle text-light text-decoration-none"
+        >
+          Welcome {{ accountService.currentUser()?.username | titlecase }}
         </a>
         <div *dropdownMenu class="dropdown-menu">
           <a class="dropdown-item">Edit profile</a>
@@ -71,10 +94,10 @@
           <a class="dropdown-item" (click)="logout()">Logout</a>
         </div>
       </div>
-    }
+      }
 
-    <!-- show form -->
-    @if (!this.accountService.currentUser()) {
+      <!-- show form -->
+      @if (!this.accountService.currentUser()) {
       <div></div>
       <form
         #loginForm="ngForm"
@@ -97,7 +120,7 @@
         />
         <button class="btn btn-success fs-base" type="submit">Login</button>
       </form>
-    }      
+      }
     </div>
   </div>
 </nav>

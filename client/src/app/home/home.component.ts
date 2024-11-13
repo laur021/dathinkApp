@@ -1,18 +1,17 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from "@angular/core";
 import { RegisterComponent } from "../register/register.component";
-import { HttpClient } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
-import { AccountService } from '../_services/account.service';
+import { HttpClient } from "@angular/common/http";
+import { RouterLink } from "@angular/router";
+import { AccountService } from "../_services/account.service";
 
 @Component({
-  selector: 'app-home',
+  selector: "app-home",
   standalone: true,
   imports: [RegisterComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: "./home.component.html",
+  styleUrl: "./home.component.css",
 })
 export class HomeComponent implements OnInit {
-
   http = inject(HttpClient);
   accountService = inject(AccountService);
   registerMode = false;
@@ -22,11 +21,11 @@ export class HomeComponent implements OnInit {
     this.getUsers();
   }
 
-  registerToggle(){
+  registerToggle() {
     this.registerMode = !this.registerMode;
   }
 
-  cancelRegisterMode(event: boolean){
+  cancelRegisterMode(event: boolean) {
     this.registerMode = event;
   }
 
