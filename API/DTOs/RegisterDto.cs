@@ -6,7 +6,9 @@ namespace API.DTOs;
 public class RegisterDto
 {
     [Required]
-    public required string Username { get; set; } //ganto yung casing para sa JSON username siya, hindi camelcase, unlike nung nasa entities
+    public  string Username { get; set; } = string.Empty; //ganto yung casing para sa JSON username siya, hindi camelcase, unlike nung nasa entities
+    
     [Required]
-    public required string Password { get; set; }
+    [StringLength(8, MinimumLength = 4)]
+    public string Password { get; set; } = string.Empty;
 }
