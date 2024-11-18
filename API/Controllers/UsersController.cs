@@ -1,7 +1,9 @@
 using System;
 using API.Data;
+using API.DTOs;
 using API.Entities;
 using API.Interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,26 +11,30 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers;
 
 [Authorize]
-public class UsersController(IUserRepository userRepository) : BaseApiController
+public class UsersController(IUserRepository userRepository, IMapper mapper) : BaseApiController
 {
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<memberD>>> GetUsersAsync()
+    public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsersAsync()
     {
         var users = await userRepository.GetUsersAsync();
 
-        if (!users.Any()) return NotFound("Not found.");
+        var usersToReturn = mapper.Map<IEnumerable<MemberDto>>(users);
 
-        return Ok(users);
+        if (!usersToReturn.Any()) return NotFound("Not found.");
+
+        return Ok(usersToReturn);
     }
 
-    [HttpGet("{username}")] //api/users/3
-    public async Task<ActionResult<AppUser>> GetUserAsync(string username)
+    [HttpGet("{username}")] //api/users/string
+    public async Task<ActionResult<MemberDto>> GetUserAsync(string username)
     {
         var user = await userRepository.GetUserByUsernameAsync(username); //use find instead of FirstOrDefault
 
-        if (user is null) return NotFound("Not found."); 
+        var userToReturn = mapper.Map<MemberDto>(user);
 
-        return user;
+        if (userToReturn is null) return NotFound("Not found."); 
+
+        return userToReturn; //return mapper.Map<MemberDto>(user);
     }
 }
 
