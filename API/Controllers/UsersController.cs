@@ -11,30 +11,26 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers;
 
 [Authorize]
-public class UsersController(IUserRepository userRepository, IMapper mapper) : BaseApiController
+public class UsersController(IUserRepository userRepository) : BaseApiController
 {
     [HttpGet]
     public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsersAsync()
     {
-        var users = await userRepository.GetUsersAsync();
+        var users = await userRepository.GetMembersDtosAsync();
 
-        var usersToReturn = mapper.Map<IEnumerable<MemberDto>>(users);
+        if (!users.Any()) return NotFound("Not found.");
 
-        if (!usersToReturn.Any()) return NotFound("Not found.");
-
-        return Ok(usersToReturn);
+        return Ok(users);
     }
 
     [HttpGet("{username}")] //api/users/string
     public async Task<ActionResult<MemberDto>> GetUserAsync(string username)
     {
-        var user = await userRepository.GetUserByUsernameAsync(username); //use find instead of FirstOrDefault
+        var user = await userRepository.GetMemberDtoAsync(username); //use find instead of FirstOrDefault
 
-        var userToReturn = mapper.Map<MemberDto>(user);
+        if (user is null) return NotFound("Not found."); 
 
-        if (userToReturn is null) return NotFound("Not found."); 
-
-        return userToReturn; //return mapper.Map<MemberDto>(user);
+        return user; 
     }
 }
 
