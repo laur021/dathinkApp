@@ -16,18 +16,9 @@ export class MembersService {
 
   getMembers() {
     return this.http.get<Member[]>(this.baseUrl + "users");
-  } //,this.getHttpOptions()
+  } 
 
   getMember(username: string) {
     return this.http.get<Member>(this.baseUrl + `users/${username}`);
-  } //,this.getHttpOptions()
-
-  //function to get the token and put into httpheaders
-  // getHttpOptions() {
-  //   return {
-  //     headers: new HttpHeaders({
-  //       Authorization: `Bearer ${this.accountService.currentUser()?.token}`, //use backticks
-  //     }),
-  //   };
-  // }
+  } 
 }
