@@ -1,13 +1,14 @@
-.dropdown-toggle, .dropdown-item {
-    cursor: pointer;
+.dropdown-toggle,
+.dropdown-item {
+  cursor: pointer;
 }
 
 ul li a:hover {
-    background-color: rgba(255, 165, 0, 0.5);
-    border-radius: 0.5rem;
+  background-color: rgba(255, 165, 0, 0.5);
+  border-radius: 0.5rem;
 }
 
 ul li a:active {
-    background-color: rgba(255, 165, 0, 0.5);
-    border-radius: 0.5rem;
+  background-color: rgba(255, 165, 0, 0.5);
+  border-radius: 0.5rem;
 }

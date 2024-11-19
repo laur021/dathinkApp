@@ -1,1 +1,5 @@
-<p>member-list works!</p>
+<div class="row">
+  @for (member of members; track member.id) {
+  <app-member-card [member]="member" class="col-3 gap-1"></app-member-card>
+  }
+</div>
