@@ -13,16 +13,16 @@ public class UserRepository(DataContext context, IMapper mapper) : IUserReposito
     public async Task<MemberDto?> GetMemberDtoAsync(string username)
     {
         return await context.Users
-        .Where(u => u.UserName == username)
-        .ProjectTo<MemberDto>(mapper.ConfigurationProvider)
-        .SingleOrDefaultAsync();  
+            .Where(u => u.UserName == username)
+            .ProjectTo<MemberDto>(mapper.ConfigurationProvider)
+            .SingleOrDefaultAsync();  
     }
 
     public async Task<IEnumerable<MemberDto>> GetMembersDtosAsync()
     {
         return await context.Users
-        .ProjectTo<MemberDto>(mapper.ConfigurationProvider)
-        .ToListAsync();
+            .ProjectTo<MemberDto>(mapper.ConfigurationProvider)
+            .ToListAsync();
     }
 
     public async Task<AppUser?> GetUserByIdAsync(int id)
@@ -33,15 +33,15 @@ public class UserRepository(DataContext context, IMapper mapper) : IUserReposito
     public async Task<AppUser?> GetUserByUsernameAsync(string username)
     {
         return await context.Users
-        .Include(x => x.Photos)
-        .SingleOrDefaultAsync(x => x.UserName == username);
+            .Include(x => x.Photos)
+            .SingleOrDefaultAsync(x => x.UserName == username);
     }
 
     public async Task<IEnumerable<AppUser>> GetUsersAsync()
     {
         return await context.Users
-        .Include(x => x.Photos)
-        .ToListAsync();
+            .Include(x => x.Photos)
+            .ToListAsync();
     }
 
     public async Task<bool> SaveAllAsync()
@@ -52,5 +52,12 @@ public class UserRepository(DataContext context, IMapper mapper) : IUserReposito
     public void Update(AppUser user)
     {
         context.Entry(user).State = EntityState.Modified;
+    }
+
+    // New AddUserAsync method
+    public async Task AddUserAsync(AppUser user)
+    {
+        // Add user to the database context
+        await context.Users.AddAsync(user);
     }
 }
