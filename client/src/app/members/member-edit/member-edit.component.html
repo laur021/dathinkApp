@@ -1,0 +1,7 @@
+<ng-container *ngIf="member">
+  <ul>
+    <li *ngFor="let entry of member | keyvalue">
+      <strong>{{ entry.key }}:</strong> {{ entry.value }}
+    </li>
+  </ul>
+</ng-container>
