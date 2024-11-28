@@ -12,7 +12,7 @@ namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20241119023328_updatephotos")]
-    partial class updatephotos
+    partial class Updatephotos
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
